@@ -5,10 +5,11 @@ interface ErrorProps {
   reset: () => void;
 }
 
-export default function Error({ reset }: ErrorProps) {
+export default function Error({ error, reset }: ErrorProps) {
   return (
     <div>
       <h2>Something went wrong!</h2>
+      <p>{error.message}</p>
 
       <button type="button" onClick={() => reset()}>
         Try again
